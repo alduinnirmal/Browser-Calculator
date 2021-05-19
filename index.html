@@ -7,8 +7,11 @@
     <title>Document</title>
     <link href="style.css" type="text/css" rel="stylesheet">
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
 </head>
 <body>
+    
     <div class="outer">
         <div class="calc-outer">
             <div class="output">
@@ -16,6 +19,7 @@
             </div>
             <div class="button">
                 <button onclick="ClearScreen()" class="btn">C</button>
+                
                 <div class="row">
                     <button onclick="ClickButton(7)" class="btn">7</button>
                     <button onclick="ClickButton(8)" class="btn">8 </button>
@@ -42,6 +46,18 @@
                     <button onclick="ClickButton('.')" class="btn">.</button>
                     <button onclick="ClickResult()" class="btn">=</button>
                     <button onclick="ClickButton('+')" class="btn">+</button>
+                    <script>
+                        $(document).ready(function(){
+                            $(".btn").click(function(){
+                                // alert("Button Clicked")
+                            })
+                            $(".btn").data('bgcolor', '	#FF0000').hover(function(){
+                            var $this = $(this);
+                            var newBgc = $this.data('bgcolor');
+                            $this.data('bgcolor', $this.css('background-color')).css('background-color', newBgc);
+                            });
+                        })
+                    </script>
             
                 </div>
             </div>
